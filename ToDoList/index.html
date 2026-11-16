@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster - Full-Featured To-Do App</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1><i class="fas fa-check-double"></i> TaskMaster</h1>
+            <button id="theme-toggle" title="Toggle Dark Mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </header>
+
+        <!-- Task Input Section -->
+        <form id="todo-form" class="input-group">
+            <input type="text" id="todo-input" placeholder="What needs to be done?" required autocomplete="off">
+            <div class="input-options">
+                <select id="priority-select" title="Task Priority">
+                    <option value="low">Low Priority</option>
+                    <option value="medium" selected>Medium Priority</option>
+                    <option value="high">High Priority</option>
+                </select>
+                <input type="date" id="date-input" title="Due Date">
+                <button type="submit" id="add-btn">
+                    <i class="fas fa-plus"></i> Add Task
+                </button>
+            </div>
+        </form>
+
+        <!-- Search and Filter Controls -->
+        <div class="controls-container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search-input" placeholder="Search tasks...">
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="pending">Pending</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+        </div>
+
+        <!-- Task List -->
+        <ul id="todo-list" class="todo-list">
+            <!-- Tasks will be dynamically injected here -->
+        </ul>
+
+        <!-- Footer Stats & Clear Action -->
+        <footer>
+            <span id="task-counter">0 tasks remaining</span>
+            <button id="clear-completed">Clear Completed</button>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
